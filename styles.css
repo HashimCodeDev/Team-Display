@@ -17,6 +17,10 @@ body {
     padding: 2rem;
 }
 
+.team{
+    text-align: center;
+}
+
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
