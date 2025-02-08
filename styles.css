@@ -1,88 +1,149 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: #f5f5f5;
+}
+
 .container {
-    padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 2rem;
 }
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    padding: 1rem;
 }
 
-.team-member {
+/* Profile Card Styles */
+.profile-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Profile Image Styles */
+.profile-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
     position: relative;
-    perspective: 1000px;
-}
-
-.member-card {
-    position: relative;
-    width: 20vw;
-    height: 300px;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-.hashim{
-    top: 20px;
-}
-
-.member-front, .member-details {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
     overflow: hidden;
 }
 
-.member-front {
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.member-front img {
+.profile-image img {
     width: 100%;
     height: 100%;
+    border-radius: 50%;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.hover-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    padding: 1rem;
-    transform: translateY(100%);
-    transition: transform 0.3s;
+.profile-card:hover .profile-image img {
+    transform: scale(1.1);
 }
 
-.member-front:hover .hover-info {
-    transform: translateY(0);
+/* Profile Info Styles */
+.profile-info {
+    width: 100%;
 }
 
-.member-details {
-    background: white;
-    padding: 1.5rem;
-    transform: rotateY(180deg);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow-y: auto;
+.profile-info h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.show-details .member-card {
-    transform: rotateY(180deg);
+.role {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
-.close-details {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    padding: 0.5rem 1rem;
+/* Hover Content Styles */
+.hover-content {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.profile-card:hover .hover-content {
+    opacity: 1;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.brief-bio {
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.quick-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.quick-skills span {
+    background: #f0f0f0;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+/* Button Styles */
+.view-profile {
     background: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
     cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.view-profile:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
 }
