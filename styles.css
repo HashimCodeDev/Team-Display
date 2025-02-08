@@ -17,6 +17,15 @@ body {
     padding: 2rem;
 }
 
+.team{
+    text-align: center;
+}
+
+.profile-card a{
+    text-decoration: none;
+    color: white;
+}
+
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -27,11 +36,13 @@ body {
 /* Profile Card Styles */
 .profile-card {
     background: white;
+    height: 60vh;
     border-radius: 15px;
     padding: 1.5rem;
     transition: all 0.3s ease-in;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    align-content: center;
 }
 
 .profile-card:hover {
@@ -53,6 +64,7 @@ body {
     margin-bottom: 1rem;
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease-in;
 }
 
 .profile-image img {
@@ -63,7 +75,11 @@ body {
     transition: transform 0.3s ease;
 }
 
-.profile-card:hover .profile-image img {
+.profile-image:hover{
+    transform: scale(1.1);
+}
+
+.profile-card:hover{
     transform: scale(1.1);
 }
 
